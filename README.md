@@ -14,5 +14,23 @@ Having overly long sentences still has the potential to throw off pre-training a
 ### Medical lists
 Medical lists were fairly easy to handle, and I think my code handled a majority of the cases. The form of medical lists was often a large chunk of text with new lines after every element in a list, and two new lines between lists or headers. Elements in the list often started with a space or dot signifying that it was a new element and under the current list header. I made the decision that headers could be their own sentences, as combining them with another sentence seem arbitrary, and that each element in a list was its own sentence as well. 
 
+Example:
+
+CURRENT MEDICATIONS:
+
+  Medication 1
+  Medication 2
+  Medication 3 for x weeks at y dosage
+and then z weeks at 2 dosage.
+
+In the example below it's obvious that the third element in the list is on two lines, and should be condensed into one sentence, while the rest of the elements are easily split by new lines into their own sentences.
+
+
 ### Long paragraphs containing subject headings
 The next case that occurred less often was a large chunk of text with no new lines and no reliable sentence boundary punctuation. However, these chunks of text did often contain headers with the form of capital letters, possibly with spaces, followed by a colon. I decided that each header was its own sentence, and then the following information was also its own sentence and only ended at the next reliable header.
+
+Example:
+
+PAST MEDICAL HISTORY: The patient has a history of x but has been well controled in the past with proper nutrition and medication FAMILY HISTORY: No significant family history social history: p.t smokes two packs a week, and drinks with dinner as well as socially denies elicit drug use lives with wife in the Bronx Chief Complaint: p.t. presented with radiating chest pain.
+
+In the above example there is no punctuation to help discern sentences but headers can be used to split the text up. However headers are not always reliable and may contain all capital letters, or just a few. 
