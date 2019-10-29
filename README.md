@@ -18,9 +18,9 @@ Example:
 
 CURRENT MEDICATIONS:
 
-  Medication 1
-  Medication 2
-  Medication 3 for x weeks at y dosage
+  * Medication 1
+  * Medication 2
+  * Medication 3 for x weeks at y dosage
 and then z weeks at 2 dosage.
 
 In the example below it's obvious that the third element in the list is on two lines, and should be condensed into one sentence, while the rest of the elements are easily split by new lines into their own sentences.
